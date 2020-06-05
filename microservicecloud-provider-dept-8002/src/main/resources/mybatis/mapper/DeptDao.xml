@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xigua.springcloud.dao.DeptDao">
+    <insert id="addDept">
+        INSERT into dept(dept_name, db_source)
+        values (#{dname}, DATABASE());
+
+    </insert>
+
+
+    <select id="findById" parameterType="long" resultType="org.xigua.springcloud.entities.Dept">
+        SELECT dept_name as dname,
+               dept_no   as deptno,
+               db_source as db_source
+        from dept
+        where dept_no = #{deptno};
+
+
+    </select>
+
+
+    <select id="findAll" resultType="org.xigua.springcloud.entities.Dept">
+        SELECT dept_name as dname,
+               dept_no   as deptno,
+               db_source as db_source
+        from dept;
+    </select>
+
+
+</mapper>
