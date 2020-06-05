@@ -40,7 +40,7 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/dept/get", method = RequestMethod.GET)
-    public Dept get(@PathVariable("id") Long id) {
+    public Dept get(@PathVariable("id") long id) {
         return server.get(id);
     }
 

@@ -31,8 +31,8 @@ public class DeptController_Consumer {
         return service.add(dept);
     }
 
-    @RequestMapping(value = "/consumer/dept/get")
-    public Dept get(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/consumer/dept/get/{id}")
+    public Dept get(@PathVariable("id") long id) {
         return service.get(id);
     }
 

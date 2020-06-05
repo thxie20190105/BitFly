@@ -1,6 +1,5 @@
 package com.xigua.springcloud.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xigua.springcloud.entities.Dept;
 import com.xigua.springcloud.server.DeptServer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +40,10 @@ public class DeptController {
     }
 
 
-    @RequestMapping(value = "/dept/get", method = RequestMethod.GET)
     //一旦调用服务方法失败并且抛出异常，会自动调用下面的fallbackMethod方法
-    @HystrixCommand(fallbackMethod = "processHystrix_Get")
-    public Dept get(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
+    //@HystrixCommand(fallbackMethod = "processHystrixGet")
+    public Dept get(@PathVariable("id") long id) {
         Dept dept = server.get(id);
         if (dept == null) {
             throw new RuntimeException("为找到ID");
@@ -53,7 +52,7 @@ public class DeptController {
         return dept;
     }
 
-    public Dept processHystrix_Get(@PathVariable("id") long id) {
+    public Dept processHystrixGet(@PathVariable("id") long id) {
         return new Dept().setDeptno(id).setDname("该ID" + id + "没有对应有效信息").setDb_source("no this database in mysql");
     }
 
