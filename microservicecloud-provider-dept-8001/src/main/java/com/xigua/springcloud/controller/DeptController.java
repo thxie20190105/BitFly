@@ -1,5 +1,6 @@
 package com.xigua.springcloud.controller;
 
+import com.xigua.springcloud.entities.Dept;
 import com.xigua.springcloud.server.DeptServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.xigua.springcloud.entities.Dept;
 
 import java.util.List;
 

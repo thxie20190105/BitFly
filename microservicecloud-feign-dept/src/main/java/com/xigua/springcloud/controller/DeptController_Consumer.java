@@ -1,11 +1,11 @@
 package com.xigua.springcloud.controller;
 
 import com.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.server.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -16,16 +16,11 @@ import java.util.List;
  **/
 @RestController
 public class DeptController_Consumer {
-
-    //private static final String REST_URL_PREFIX = "http://localhost:8001";
-    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
-
-
-    private RestTemplate template;
+    private DeptClientService service;
 
     @Autowired
-    public DeptController_Consumer(RestTemplate template) {
-        this.template = template;
+    public DeptController_Consumer(DeptClientService service) {
+        this.service = service;
     }
 
     @RequestMapping(value = "/consumer/dept/add")
@@ -33,23 +28,17 @@ public class DeptController_Consumer {
 
         //发表对象
         //参数1是服务端地址、参数二是入参、参数三十返回类型。
-        return template.postForObject(REST_URL_PREFIX + "/dept/add", dept, Boolean.class);
+        return service.add(dept);
     }
 
     @RequestMapping(value = "/consumer/dept/get")
     public Dept get(@PathVariable("id") Long id) {
-        return template.getForObject(REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
+        return service.get(id);
     }
 
     @RequestMapping(value = "/consumer/dept/list")
     public List list() {
-        return template.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
-    }
-
-    @RequestMapping(value = "/consumer/dept/discovery")
-    public Object discovery() {
-        return template.getForObject(REST_URL_PREFIX + "/dept/discovery", Object.class);
-
+        return service.list();
     }
 
 

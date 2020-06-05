@@ -1,4 +1,4 @@
-package org.xigua.springcloud.entities;
+package com.xigua.springcloud.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

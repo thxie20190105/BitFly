@@ -1,6 +1,6 @@
 package com.xigua.springcloud.server;
 
-import org.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.entities.Dept;
 
 import java.util.List;
 
