@@ -1,7 +1,6 @@
 package com.xigua.ribbon;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020/6/5
  **/
 @Configuration
-public class MyRule {
+public class MySelfRule {
 
 
     /**
@@ -19,7 +18,7 @@ public class MyRule {
      */
     @Bean
     public IRule myRule() {
-        return new RandomRule();
+        return new RandomRule_XIGUA();
     }
 
 }
