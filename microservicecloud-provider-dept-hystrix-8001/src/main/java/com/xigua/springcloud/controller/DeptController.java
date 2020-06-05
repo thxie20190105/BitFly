@@ -42,7 +42,7 @@ public class DeptController {
 
     //一旦调用服务方法失败并且抛出异常，会自动调用下面的fallbackMethod方法
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-    //@HystrixCommand(fallbackMethod = "processHystrixGet")
+    // @HystrixCommand(fallbackMethod = "processHystrixGet")
     public Dept get(@PathVariable("id") long id) {
         Dept dept = server.get(id);
         if (dept == null) {
