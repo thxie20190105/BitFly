@@ -22,7 +22,6 @@ public class ConfigBean {
     @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
-
         return new RestTemplate();
     }
 
