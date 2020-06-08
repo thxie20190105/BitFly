@@ -28,7 +28,7 @@ zuul:
     mydept.serviceId: microservicecloud-dept
     mydept.path: /mydept/**
   ignored-services: microservicecloud-dept
-  prefix: xigua
+  # prefix: xigua
 
 
 info:
