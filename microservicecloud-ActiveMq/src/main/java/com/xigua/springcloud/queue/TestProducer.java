@@ -1,4 +1,4 @@
-package com.xigua.springcloud;
+package com.xigua.springcloud.queue;
 
 
 import org.apache.activemq.ActiveMQConnectionFactory;
