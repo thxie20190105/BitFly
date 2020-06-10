@@ -33,9 +33,18 @@ public class TestConsumerListener {
                 TextMessage textMessage = (TextMessage) message;
                 try {
                     System.out.println("消费者收到的信息" + textMessage.getText());
+                    System.out.println("消息属性" + textMessage.getStringProperty("p1"));
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
+            } else if (null != message && message instanceof MapMessage) {
+                MapMessage mapMessage = (MapMessage) message;
+                try {
+                    System.out.println(mapMessage.getString("k1"));
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 

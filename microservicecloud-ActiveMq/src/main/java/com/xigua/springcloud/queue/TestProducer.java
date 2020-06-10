@@ -24,14 +24,22 @@ public class TestProducer {
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         //4、创建目的地 引用JMS包
         Queue queue = session.createQueue(QUEUE_NAME);
-        //5、创建消息的生产者
+        //5、创建消息的生产者,并设置持久化属性
         MessageProducer producer = session.createProducer(queue);
+        producer.setDeliveryMode(DeliveryMode.PERSISTENT);
         //6、发送消息
         for (int i = 0; i <= 3; i++) {
-            //7、创建消息
+            //7、创建消息体,设置消息头，设置消息属性
             TextMessage textMessage = session.createTextMessage("msg" + i);
-            //8、通过消息生产者发送给mq
+            textMessage.setJMSMessageID("9999");
+            textMessage.setStringProperty("p1", "vip");
+            //8、通过消息生产者发送给mq，通过方法的重载可以设置优先级等属性。
             producer.send(textMessage);
+
+            //Map消息体
+            MapMessage mapMessage = session.createMapMessage();
+            mapMessage.setString("k1", "v1");
+            producer.send(mapMessage);
 
         }
         //9、关闭资源
