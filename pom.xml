@@ -21,6 +21,7 @@
         <module>microservicecloud-consumer-hystrix-dashboard</module>
         <module>microservicecloud-zuul-gateway-9527</module>
         <module>microservicecloud-spring-mq</module>
+        <module>microservicecloud-active-mq</module>
     </modules>
     <packaging>pom</packaging>
 
