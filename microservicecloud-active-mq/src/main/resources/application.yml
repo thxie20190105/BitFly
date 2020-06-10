@@ -1,6 +1,13 @@
 server:
   port: 7777
+
 spring:
+  activemq:
+    broker-url: tcp://192.168.17.17:61616 #MQ的服务器地址
+    password: admin
+    user: admin
+  jms:
+    pub-sub-domain: false # false等于队列 true等于topic  默认值是false
   application:
     name: microservicecloud-activemq
   datasource:
@@ -13,6 +20,7 @@ spring:
       min-idle: 5
       max-total: 5
       initial-size: 5
+
 eureka:
   client: # 将客户端注册进eureka中，地址就是7001项目里面暴露的地址。
     service-url:
@@ -26,3 +34,5 @@ info:
   acompany.name: xigua
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
+
+myqueue: boot-active-queue
