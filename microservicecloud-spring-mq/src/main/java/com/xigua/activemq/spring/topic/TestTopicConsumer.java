@@ -1,4 +1,4 @@
-package com.xigua.springcloud.topic;
+package com.xigua.activemq.spring.topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

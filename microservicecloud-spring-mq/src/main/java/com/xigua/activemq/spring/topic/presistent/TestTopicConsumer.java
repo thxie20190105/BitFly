@@ -1,4 +1,4 @@
-package com.xigua.springcloud.topic.presistent;
+package com.xigua.activemq.spring.topic.presistent;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

@@ -1,4 +1,4 @@
-package com.xigua.springcloud.queue;
+package com.xigua.activemq.spring.queue;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -20,7 +20,7 @@ public class TestConsumer {
         Connection connection = activeMQConnectionFactory.createConnection();
         connection.start();
 
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
 
         Queue queue = session.createQueue(QUEUE_NAME);
 
@@ -35,6 +35,8 @@ public class TestConsumer {
                 break;
             }
         }
+        //消费成功
+        session.commit();
         consumer.close();
         session.close();
         connection.close();
