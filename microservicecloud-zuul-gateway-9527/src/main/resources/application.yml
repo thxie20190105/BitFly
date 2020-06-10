@@ -14,12 +14,13 @@ spring:
       min-idle: 5
       max-total: 5
       initial-size: 5
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
   instance:
-    instance-id: gateway-9527.com #host映射文件
+    instance-id: microservicecloud-zuul-gataway-9527 #host映射文件
     prefer-ip-address: true # 显示ip
 
 # 配置zuul的地址映射
@@ -32,7 +33,7 @@ zuul:
 
 
 info:
-  app.name: xigua
+  app.name: microservicecloud-zuul-gataway
   company.name: xigua
   build.artifactid: ${project.artifactid}
   build.version: ${project.version}
