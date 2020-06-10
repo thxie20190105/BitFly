@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservicecloud-active-mq-topic</artifactId>
+    <artifactId>microservicecloud-activemq-topic-7778</artifactId>
 
     <dependencies>
         <dependency>

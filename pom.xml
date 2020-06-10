@@ -19,8 +19,8 @@
         <module>microservicecloud-provider-dept-hystrix-8001</module>
         <module>microservicecloud-provider-dept-hystrix-8002</module>
         <module>microservicecloud-spring-mq</module>
-        <module>microservicecloud-active-mq</module>
-        <module>microservicecloud-active-mq-topic</module>
+        <module>microservicecloud-activemq-queue-7777</module>
+        <module>microservicecloud-activemq-topic-7778</module>
     </modules>
     <packaging>pom</packaging>
 

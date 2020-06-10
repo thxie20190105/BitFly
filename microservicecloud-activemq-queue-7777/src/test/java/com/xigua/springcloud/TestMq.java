@@ -12,7 +12,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
  * @description
  * @date 2020/6/10
  **/
-@SpringBootTest(classes = XiguaMicroservicecloud_7777_App.class)
+@SpringBootTest(classes = Microservicecloud_7777_App.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 public class TestMq {
