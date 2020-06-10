@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  **/
 @SpringBootApplication
 @EnableZuulProxy
-public class Zuul_9527_App {
+public class Microservicecloud_9527_App {
     public static void main(String[] args) {
-        SpringApplication.run(Zuul_9527_App.class, args);
+        SpringApplication.run(Microservicecloud_9527_App.class, args);
     }
 }

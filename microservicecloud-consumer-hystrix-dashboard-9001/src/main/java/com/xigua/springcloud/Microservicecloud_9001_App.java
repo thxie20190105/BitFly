@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
  **/
 @SpringBootApplication
 @EnableHystrixDashboard
-public class DeptProvider_hystrix_dashBoard_9001_App {
+public class Microservicecloud_9001_App {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider_hystrix_dashBoard_9001_App.class, args);
+        SpringApplication.run(Microservicecloud_9001_App.class, args);
     }
 }

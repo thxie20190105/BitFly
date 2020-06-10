@@ -13,9 +13,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients("com.xigua.springcloud")
 @EnableEurekaClient
-public class DeptConsumer80_feign_App {
+public class Microservicecloud_80_App {
     public static void main(String[] args) {
-        SpringApplication.run(DeptConsumer80_feign_App.class, args);
+        SpringApplication.run(Microservicecloud_80_App.class, args);
     }
 }
 
