@@ -9,19 +9,18 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>microservicecloud-api</module>
-        <module>microservicecloud-provider-dept-8001</module>
         <module>microservicecloud-consumer-dept-80</module>
         <module>microservicecloud-eureka-7001</module>
         <module>microservicecloud-eureka-7002</module>
         <module>microservicecloud-eureka-7003</module>
-        <module>microservicecloud-provider-dept-8002</module>
-        <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-feign-dept</module>
         <module>microservicecloud-provider-dept-hystrix-8001</module>
         <module>microservicecloud-consumer-hystrix-dashboard</module>
         <module>microservicecloud-zuul-gateway-9527</module>
         <module>microservicecloud-spring-mq</module>
         <module>microservicecloud-active-mq</module>
+        <module>microservicecloud-active-mq-topic</module>
+        <module>microservicecloud-consumer-dept-feign-80</module>
     </modules>
     <packaging>pom</packaging>
 
