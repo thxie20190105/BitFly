@@ -5,8 +5,8 @@ Eureka集群
 ActiveMQ
 Zuul
 Ribbon
-Hystrix
+包含Hystrix的服务集群
 mybatis
 
 Mysql
-redis
+redis集群
