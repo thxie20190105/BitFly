@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * @author xigua
- * @description
+ * @description 非持久化的topic消费者
  * @date 2020/6/10
  **/
 public class TestTopicConsumer {
@@ -15,13 +15,12 @@ public class TestTopicConsumer {
     private static final String TOPIC_NAME = "topic01";
 
     public static void main(String[] args) throws JMSException, IOException {
-        System.out.println("我是3号消费者");
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVE_MQ_URL);
 
         Connection connection = activeMQConnectionFactory.createConnection();
         connection.start();
 
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
 
         Topic topic = session.createTopic(TOPIC_NAME);
 
@@ -32,6 +31,7 @@ public class TestTopicConsumer {
                 TextMessage t = (TextMessage) message;
                 try {
                     System.out.println("TOPIC消息为+" + t.getText());
+                    session.commit();
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
@@ -42,5 +42,6 @@ public class TestTopicConsumer {
         consumer.close();
         session.close();
         connection.close();
+        System.out.println("消费完毕");
     }
 }

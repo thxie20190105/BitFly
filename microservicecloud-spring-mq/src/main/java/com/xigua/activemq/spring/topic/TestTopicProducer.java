@@ -6,7 +6,7 @@ import javax.jms.*;
 
 /**
  * @author xigua
- * @description
+ * @description 非持久化的topic消息提供者
  * @date 2020/6/10
  **/
 public class TestTopicProducer {
@@ -18,21 +18,22 @@ public class TestTopicProducer {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVE_MQ_URL);
 
         Connection connection = activeMQConnectionFactory.createConnection();
+        connection.start();
 
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
 
         Topic topic = session.createTopic(TOPIC_NAME);
 
         MessageProducer producer = session.createProducer(topic);
-        connection.start();
+
 
         for (int i = 1; i <= 3; i++) {
-            TextMessage textMessage = session.createTextMessage("TOPIC-MSG" + i);
+            TextMessage textMessage = session.createTextMessage("TOPIC-MSG非持久" + i);
             producer.send(textMessage);
-
         }
 
         producer.close();
+        session.commit();
         session.close();
         connection.close();
 

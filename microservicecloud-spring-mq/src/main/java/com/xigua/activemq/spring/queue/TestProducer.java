@@ -11,8 +11,8 @@ import javax.jms.*;
  * @date 2020/6/9
  **/
 public class TestProducer {
-    //  private static final String ACTIVE_URL = "tcp://192.168.17.17:61616";
-    private static final String ACTIVE_URL = "tcp://localhost:61616";
+    private static final String ACTIVE_URL = "tcp://192.168.17.17:61616";
+    //private static final String ACTIVE_URL = "tcp://localhost:61616";
 
     private static final String QUEUE_NAME = "queue01";
 
@@ -39,9 +39,9 @@ public class TestProducer {
             producer.send(textMessage);
 
             //Map消息体
-            MapMessage mapMessage = session.createMapMessage();
-            mapMessage.setString("k1", "v1");
-            producer.send(mapMessage);
+            // MapMessage mapMessage = session.createMapMessage();
+            // mapMessage.setString("k1", "v1");
+            // producer.send(mapMessage);
 
         }
         //9、关闭资源、提交事务

@@ -7,26 +7,25 @@ import java.io.IOException;
 
 /**
  * @author xigua
- * @description
+ * @description 持久化的
  * @date 2020/6/10
  **/
 public class TestTopicConsumer {
     private static final String ACTIVE_MQ_URL = "tcp://192.168.17.17:61616";
-    private static final String TOPIC_NAME = "topic01";
+    private static final String TOPIC_NAME = "presistentTopic01";
 
     public static void main(String[] args) throws JMSException, IOException {
-        System.out.println("***z3");
 
         //1、创建连接
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVE_MQ_URL);
         Connection connection = activeMQConnectionFactory.createConnection();
         //2、获得连接表明有一个张三订阅
-        connection.setClientID("z3");
+        connection.setClientID("huahua");
         //3、获得session
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         //4、创建目的地
         Topic topic = session.createTopic(TOPIC_NAME);
-        //创建一个持久化的订阅者
+        //创建一个持久化的订阅者，第二个参数是备注
         TopicSubscriber topicSubscriber = session.createDurableSubscriber(topic, "remark");
 
         //挪下来的原因是要在启动之前设置好持久化属性，才能启动

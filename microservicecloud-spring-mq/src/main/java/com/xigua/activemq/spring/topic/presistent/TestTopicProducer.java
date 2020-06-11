@@ -9,16 +9,16 @@ import javax.jms.*;
  * @description 持久化的Topic
  * @date 2020/6/10
  **/
-public class TestTopicProcucer {
+public class TestTopicProducer {
     private static final String ACTIVE_MQ_URL = "tcp://192.168.17.17:61616";
-    private static final String TOPIC_NAME = "topic01";
+    private static final String TOPIC_NAME = "presistentTopic01";
 
     public static void main(String[] args) throws JMSException {
 
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVE_MQ_URL);
         Connection connection = activeMQConnectionFactory.createConnection();
 
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
         Topic topic = session.createTopic(TOPIC_NAME);
         MessageProducer producer = session.createProducer(topic);
         //设置持久化
@@ -27,12 +27,13 @@ public class TestTopicProcucer {
         //挪下来的原因是要在启动之前设置好持久化属性，才能启动
         connection.start();
         for (int i = 1; i <= 3; i++) {
-            TextMessage textMessage = session.createTextMessage("TOPIC-MSG" + i);
+            TextMessage textMessage = session.createTextMessage("TOPIC-MSG持久化" + i);
             producer.send(textMessage);
 
         }
 
         producer.close();
+        session.commit();
         session.close();
         connection.close();
 

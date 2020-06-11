@@ -28,7 +28,7 @@ public class TestConsumer {
         MessageConsumer consumer = session.createConsumer(queue);
         //6、接受消息
         while (true) {
-            TextMessage message = (TextMessage) consumer.receive();
+            TextMessage message = (TextMessage) consumer.receive(2000L);
             if (null != message) {
                 System.out.println("消息为" + message.getText());
             } else {
