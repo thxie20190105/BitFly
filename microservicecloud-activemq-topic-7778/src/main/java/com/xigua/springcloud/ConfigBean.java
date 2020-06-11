@@ -27,7 +27,7 @@ public class ConfigBean {
      * @return 返回一个队列
      */
     @Bean
-    public Topic queue() {
+    public Topic topic() {
         return new ActiveMQTopic(myTopic);
     }
 

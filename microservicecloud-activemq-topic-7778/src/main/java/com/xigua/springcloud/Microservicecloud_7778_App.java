@@ -16,8 +16,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableScheduling
-public class Microservicecloud_6666_App {
+public class Microservicecloud_7778_App {
     public static void main(String[] args) {
-        SpringApplication.run(Microservicecloud_6666_App.class, args);
+        SpringApplication.run(Microservicecloud_7778_App.class, args);
     }
 }

@@ -32,14 +32,6 @@ public class MqProduce {
         this.topic = topic;
     }
 
-    public void produceTopic() {
-        //宝石发送到我的队列里面，第二个参数设置负载
-        template.convertAndSend(topic,
-                "*****主题消息：" + UUID.randomUUID().
-                        toString().
-                        substring(0, 6));
-    }
-
     /**
      * 定时投放任务
      */

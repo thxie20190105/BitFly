@@ -21,6 +21,7 @@
         <module>microservicecloud-spring-mq</module>
         <module>microservicecloud-activemq-queue-7777</module>
         <module>microservicecloud-activemq-topic-7778</module>
+        <module>microservicecloud-provider-warehouse-8010</module>
     </modules>
     <packaging>pom</packaging>
 
