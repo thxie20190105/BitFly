@@ -59,7 +59,7 @@
             <version>5.15.9</version>
         </dependency>
 
-        <!--  activemq 和 spring 整合的基础包 -->
+        <!--  activemq 和 spring 整合的基础包-->
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-spring</artifactId>

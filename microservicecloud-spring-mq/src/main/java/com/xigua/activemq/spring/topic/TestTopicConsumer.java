@@ -26,6 +26,7 @@ public class TestTopicConsumer {
 
         MessageConsumer consumer = session.createConsumer(topic);
 
+
         consumer.setMessageListener(message -> {
             if (null != message && message instanceof TextMessage) {
                 TextMessage t = (TextMessage) message;

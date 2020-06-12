@@ -12,8 +12,6 @@ import javax.jms.*;
  **/
 public class TestProducer {
     private static final String ACTIVE_URL = "tcp://192.168.17.17:61616";
-    //private static final String ACTIVE_URL = "tcp://localhost:61616";
-
     private static final String QUEUE_NAME = "queue01";
 
     public static void main(String[] args) throws JMSException {
@@ -28,6 +26,7 @@ public class TestProducer {
         Queue queue = session.createQueue(QUEUE_NAME);
         //5、创建消息的生产者,并设置持久化属性
         MessageProducer producer = session.createProducer(queue);
+        System.out.println(producer.getDeliveryMode());
         producer.setDeliveryMode(DeliveryMode.PERSISTENT);
         //6、发送消息
         for (int i = 0; i <= 3; i++) {
@@ -45,9 +44,8 @@ public class TestProducer {
 
         }
         //9、关闭资源、提交事务
-        session.commit();
-        //session.rollback();
         producer.close();
+        session.commit();
         session.close();
         connection.close();
         System.out.println("操作完成");

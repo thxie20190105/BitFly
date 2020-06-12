@@ -36,7 +36,7 @@ public class TestConsumer {
             }
         }
         //消费成功
-        session.commit();
+        //session.commit();
         consumer.close();
         session.close();
         connection.close();
