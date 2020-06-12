@@ -1,6 +1,6 @@
 package com.xigua.springcloud.dao;
 
-import com.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.entities.dept.Dept;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

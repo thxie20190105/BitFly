@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xigua.springcloud.dao.IdGeneratorDao">
+
+
+    <select id="findByBizType" parameterType="long" resultType="com.xigua.springcloud.entities.idgenerator.IdGenerator">
+        SELECT max_id   as maxId,
+               step     as step,
+               biz_type as bizType,
+               version  as version
+        from id_generator
+        where biz_type = #{bizType};
+    </select>
+
+
+    <update id="updateMaxId" parameterType="long">
+        update id_generator
+        set max_id  = max_id + step,
+            version = version + 1
+        where biz_type = #{bizType}
+    </update>
+
+
+</mapper>

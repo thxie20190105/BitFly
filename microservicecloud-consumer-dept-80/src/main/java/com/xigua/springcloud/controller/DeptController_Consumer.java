@@ -1,6 +1,6 @@
 package com.xigua.springcloud.controller;
 
-import com.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.entities.dept.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

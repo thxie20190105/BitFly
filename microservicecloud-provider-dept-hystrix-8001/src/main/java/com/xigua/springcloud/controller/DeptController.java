@@ -1,7 +1,7 @@
 package com.xigua.springcloud.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.entities.dept.Dept;
 import com.xigua.springcloud.server.DeptServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

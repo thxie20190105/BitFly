@@ -9,7 +9,7 @@
     </insert>
 
 
-    <select id="findById" parameterType="long" resultType="com.xigua.springcloud.entities.Dept">
+    <select id="findById" parameterType="long" resultType="com.xigua.springcloud.entities.dept.Dept">
         SELECT dept_name as dname,
                dept_no   as deptno,
                db_source as db_source
@@ -20,7 +20,7 @@
     </select>
 
 
-    <select id="findAll" resultType="com.xigua.springcloud.entities.Dept">
+    <select id="findAll" resultType="com.xigua.springcloud.entities.dept.Dept">
         SELECT dept_name as dname,
                dept_no   as deptno,
                db_source as db_source

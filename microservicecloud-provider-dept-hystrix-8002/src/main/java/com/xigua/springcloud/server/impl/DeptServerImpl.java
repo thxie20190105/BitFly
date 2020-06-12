@@ -1,7 +1,7 @@
 package com.xigua.springcloud.server.impl;
 
 import com.xigua.springcloud.dao.DeptDao;
-import com.xigua.springcloud.entities.Dept;
+import com.xigua.springcloud.entities.dept.Dept;
 import com.xigua.springcloud.server.DeptServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

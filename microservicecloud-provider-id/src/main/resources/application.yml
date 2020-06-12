@@ -1,13 +1,18 @@
 server:
   port: 9999
 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.xigua.springcloud.entities.*
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
 spring:
   application:
     name: microservicecloud-id
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/clouddb01?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
+    url: jdbc:mysql://localhost:3306/create_id?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
     username: root
     password: root
     dbcp2:
