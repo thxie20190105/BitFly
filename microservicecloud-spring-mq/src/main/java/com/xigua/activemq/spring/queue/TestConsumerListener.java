@@ -26,7 +26,12 @@ public class TestConsumerListener {
         Queue queue = session.createQueue(QUEUE_NAME);
 
         MessageConsumer consumer = session.createConsumer(queue);
+        consumer.setMessageListener(new MessageListener() {
+            @Override
+            public void onMessage(Message message) {
 
+            }
+        });
         //使用消息监听的模式
         consumer.setMessageListener(message -> {
             if (null != message && message instanceof TextMessage) {
